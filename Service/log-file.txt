@@ -1,0 +1,28 @@
+[Header]
+[Footer]
+[Header]
+2013-11-14 16:18:28,352 [10568] INFO  Service.Logging []  - 开始生成销售出库单！--操作员：demo,业务号：201300162332 
+2013-11-14 16:18:28,458 [10568] INFO  Service.Logging []  - 单据类型编码：0303,模板号:87！
+2013-11-14 16:18:28,802 [10568] INFO  Service.Logging []  - 销售出库单RdRecord主表插入完成,主表ID：260940！
+2013-11-14 16:18:29,168 [10568] INFO  Service.Logging []  - 销售出库单RdRecords子表插入完成,共1条数据！
+2013-11-14 16:18:29,390 [10568] INFO  Service.Logging []  - 临时表处理，修改发货单子表的待发货数量，影响行数：1！
+2013-11-14 16:18:29,692 [10568] INFO  Service.Logging []  - 临时表处理，修改发货单主表的cSaleOut为‘’，影响行数：1！
+2013-11-14 16:18:29,728 [10568] INFO  Service.Logging []  - 临时表处理，修改发货单主表的cSaleOut为‘ST’，影响行数：1！
+2013-11-14 16:18:29,755 [10568] INFO  Service.Logging []  - 审核销售出库单，影响行数：2！
+2013-11-14 16:18:30,005 [10568] INFO  Service.Logging []  - 执行Usp_SCM_CommitGeneralLedgerWithCheck存储过程，影响行数：-1！
+2013-11-14 16:18:30,036 [10568] INFO  Service.Logging []  - 处理VoucherHistory表的单据号，影响行数：1！
+2013-11-14 16:18:30,090 [10568] INFO  Service.Logging []  - 修改销售出库单主表的cCode字段为201300167823，影响行数：1！
+2013-11-14 16:18:30,112 [10568] INFO  Service.Logging []  - 销售出库单生成完成！
+[Footer]
+[Header]
+[Footer]
+[Header]
+[Footer]
+[Header]
+[Footer]
+[Header]
+[Footer]
+[Header]
+[Footer]
+[Header]
+[Footer]

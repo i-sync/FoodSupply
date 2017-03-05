@@ -1,0 +1,1756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPCVersion">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPCVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPCVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPCNewDocument">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPCNewDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPCNewDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPPCVersion">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPPCVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPPCVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPPCNewDocument">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPPCNewDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPPCNewDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUpdateFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUpdateFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUpdateFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUAAcountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUAAcountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUAAcountInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="User">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SubId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Year" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Server" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Serial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWarehouse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWarehouseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetWarehouseResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtWarehouse">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Competence">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompetenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompetenceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectPurchaseList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="whList" type="tns:ArrayOfWarehouse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWarehouse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Warehouse" nillable="true" type="tns:Warehouse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Warehouse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cWhName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cWhCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bwhpos" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="isFreezen" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="isShop" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectPurchaseListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectPurchaseListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectSaleDeliveryList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="whList" type="tns:ArrayOfWarehouse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectSaleDeliveryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectSaleDeliveryListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SA_Consignment_Load">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cDLCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SA_Consignment_LoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SA_Consignment_LoadResult" type="tns:DispatchList" />
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DispatchList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cVouchType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cVouchName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DLID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDLCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSTCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSTName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cWhCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cWhName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="cRdCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDepCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cPersonCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cPersonName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SBVID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSBVCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSOCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cPayCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSCCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cShipAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cexch_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iExchRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTaxRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="bFirst" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bReturnFlag" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bSettleAll" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="cMemo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSaleOut" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine4" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine5" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine6" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine7" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cVerifier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cMaker" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iNetLock" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSale" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCusName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iVTid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ufts" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBusType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCloser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cAccounter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCreChpName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine14" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine15" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine16" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="bIAFirst" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ioutgolden" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cgatheringplan" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dCreditStart" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dGatheringDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="icreditdays" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bCredit" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="caddcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iverifystate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ireturncount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iswfcontrolled" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="icreditstate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bARFirst" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="cmodifier" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dmoddate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dverifydate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ccusperson" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dcreatesystime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dverifysystime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dmodifysystime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="csvouchtype" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iflowid" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bsigncreate" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bcashsale" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="cgathingcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cChanger" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cChangeMemo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="outid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCusAbbName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDepName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cdeliverunit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cofficephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cmobilephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="List" type="tns:ArrayOfDispatchLists" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDispatchLists">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DispatchLists" nillable="true" type="tns:DispatchLists" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DispatchLists">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AutoID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DLID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDLCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCorID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cWhCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cWhName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBarCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iScanQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iNum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iQuotedPrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iUnitPrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTaxUnitPrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iMoney" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTax" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iDisCount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iNatUnitPrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iNatMoney" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iNatTax" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iNatSum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iNatDisCount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSettleNum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSettleQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iBatch" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBatch" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bSettleAll" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="cMemo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTB" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="dVDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TBQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TBNum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSOsID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iDLsID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="KL" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="KL2" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTaxRate" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine22" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine23" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine24" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine25" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine26" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine27" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="fOutQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="fOutNum" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cItemCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cItem_class" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fSaleCost" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="fSalePrice" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cVenAbbName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cItemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cItem_CName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree10" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bIsSTQc" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="iInvExchRate" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cUnitID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iRetQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="fEnSettleQuan" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="fEnSettleSum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSettlePrice" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine28" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine29" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine30" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine31" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine32" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine33" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine34" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine35" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine36" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine37" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dMDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="bGsp" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="cGspState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSoCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCorCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iPPartSeqID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iPPartID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iPPartQty" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cContractID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cContractTagCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cContractRowGuid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iMassDate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cMassUnit" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bQANeedCheck" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bQAUrgency" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bQAChecking" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bQAChecked" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="iQAQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iQANum" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCusInvCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCusInvName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fsumsignquantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="fsumsignnum" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cbaccounter" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bCosting" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="cordercode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iorderrowno" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="fcusminprice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="icostquantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="icostsum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ispecialtype" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cvmivencode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iexchsum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="imoneysum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="irowno" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="frettbquantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="fretsum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iExpiratDateCalcu" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="dExpirationdate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="cExpirationdate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBatchProperty1" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBatchProperty2" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBatchProperty3" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBatchProperty4" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBatchProperty5" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBatchProperty6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBatchProperty7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBatchProperty8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBatchProperty9" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBatchProperty10" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblPreExchMomey" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblPreMomey" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="idemandtype" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cdemandcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cdemandmemo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cdemandid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idemandseq" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="cvencode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cReasonCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvSN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iInvSNCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bneedsign" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bsignover" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bneedloss" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="flossrate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="frlossqty" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="fulossqty" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="isettletype" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="crelacuscode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cLossMaker" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dLossDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dLossTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="icoridlsid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="fretoutqty" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="body_outid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cPosition" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="editprop" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvStd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cinvm_unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cGroupCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine6" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ST_SaleOut_Save">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="tns:User" />
+            <s:element minOccurs="0" maxOccurs="1" name="rdRecord" type="tns:RdRecord" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RdRecord">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="cWhCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cWhName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBusType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iverifystate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iswfcontrolled" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCusAbbName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cMaker" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ufts" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cVouchType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cVouchName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSource" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bRdFlag" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bIsSTQc" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="cModifyPerson" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dModifyDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dnmaketime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dnmodifytime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dnverifytime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="cRdCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cRdName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ireturncount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDepName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cPersonCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cPersonName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dVeriDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="cMemo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cHandler" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cAccounter" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ipresent" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ccusperson" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ccusphone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ccushand" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ccusaddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contactphone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contactmobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cdeliverunit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cofficephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cmobilephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cpsnophone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cpsnmobilephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSTCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSTName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDepCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DLID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDLCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cVenAbbName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBillCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cVenCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iAvaQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iAvaNum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iPresentNum" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="gspcheck" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="isalebillid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="iarriveid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dChkDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="cChkPerson" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iVTid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cAddCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cShipAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cChkCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iLowSum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSafeSum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTopSum" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine4" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine5" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine6" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine7" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine14" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine15" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine16" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="List" type="tns:ArrayOfRdRecords" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRdRecords">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RdRecords" nillable="true" type="tns:RdRecords" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RdRecords">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SerialList" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AutoID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cinvm_unit" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iScanQuantity" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="editprop" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTaxRate" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cWhCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cWhName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvStd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvAddCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInVouchCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="iSoDID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBVencode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cVenName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cMassUnit" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iMassDate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bGsp" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="cGspState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cAssUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cPosition" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="corufts" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="scrapufts" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cinva_unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="csocode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cvmivencode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cvmivenname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bVMIUsed" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iVMISettleQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iVMISettleNum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iInvExchRate" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cVouchCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSOutQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSOutNum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iNQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iPPrice" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cbdlcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iordertype" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="iordercode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iorderdid" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iorderseq" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="iExpiratDateCalcu" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cExpirationdate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dExpirationdate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="iBondedSumQty" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="strContractId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCusInvCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCusInvName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cbaccounter" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bCosting" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSoType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iAvaQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iAvaNum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iPresent" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iPresentNum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="isoseq" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="dMadeDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dVDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBarCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine22" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine23" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine24" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine25" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine26" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine27" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine28" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine29" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine30" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine31" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine32" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cDefine33" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine34" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine35" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine36" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="cDefine37" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvDefine16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cReplaceItem" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iNum" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iNNum" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cItemCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTrIds" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cItem_class" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iDLsID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSBsID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSendQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iSendNum" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cItemCName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iEnsID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFree10" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBatchProperty1" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBatchProperty2" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBatchProperty3" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBatchProperty4" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBatchProperty5" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBatchProperty6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBatchProperty7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBatchProperty8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBatchProperty9" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cBatchProperty10" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="iMPoIds" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCheckIds" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iUnitCost" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iPrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iPUnitCost" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iGrossWeight" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iNetWeight" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="cBatch" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iInvSNCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ST_SaleOut_SaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ST_SaleOut_SaveResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConnectionTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConnectionTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConnectionTestResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchInventory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="whList" type="tns:ArrayOfWarehouse" />
+            <s:element minOccurs="0" maxOccurs="1" name="cInvCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cInvName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchInventoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchInventoryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchInventoryByPUArrival">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchInventoryByPUArrivalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchInventoryByPUArrivalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchInventoryBySaleDelivery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cDLCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchInventoryBySaleDeliveryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchInventoryBySaleDeliveryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLabelSerialNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cInvCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cBatch" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLabelSerialNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLabelSerialNumberResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifySerialNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cInvCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cBatch" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="number" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifySerialNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModifySerialNumberResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Trace">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cInvCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cBatch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VendorQuanlification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cVenCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VendorQuanlificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VendorQuanlificationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectCheckVouchList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectCheckVouchListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectCheckVouchListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectCheckVouch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkVouchs" type="tns:CheckVouchs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckVouchs">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cCVCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cCVBatch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cInvStd" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCVQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCVCQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iMassDate" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cMassUnit" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dMadeDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dDisDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectCheckVouchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SelectCheckVouchResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkVouchs" type="tns:CheckVouchs" />
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveCheckVouch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="connectionString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="list" type="tns:ArrayOfCheckVouchs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCheckVouchs">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CheckVouchs" nillable="true" type="tns:CheckVouchs" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveCheckVouchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveCheckVouchResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPCVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPCVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetPCVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPCVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPCNewDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPCNewDocument" />
+  </wsdl:message>
+  <wsdl:message name="GetPCNewDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPCNewDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPPCVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPPCVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetPPCVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPPCVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPPCNewDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPPCNewDocument" />
+  </wsdl:message>
+  <wsdl:message name="GetPPCNewDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPPCNewDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdateFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUpdateFile" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdateFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUpdateFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUAAcountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUAAcountInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUAAcountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUAAcountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWarehouseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWarehouse" />
+  </wsdl:message>
+  <wsdl:message name="GetWarehouseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWarehouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompetenceSoapIn">
+    <wsdl:part name="parameters" element="tns:Competence" />
+  </wsdl:message>
+  <wsdl:message name="CompetenceSoapOut">
+    <wsdl:part name="parameters" element="tns:CompetenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectPurchaseListSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectPurchaseList" />
+  </wsdl:message>
+  <wsdl:message name="SelectPurchaseListSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectPurchaseListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectSaleDeliveryListSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectSaleDeliveryList" />
+  </wsdl:message>
+  <wsdl:message name="SelectSaleDeliveryListSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectSaleDeliveryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SA_Consignment_LoadSoapIn">
+    <wsdl:part name="parameters" element="tns:SA_Consignment_Load" />
+  </wsdl:message>
+  <wsdl:message name="SA_Consignment_LoadSoapOut">
+    <wsdl:part name="parameters" element="tns:SA_Consignment_LoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ST_SaleOut_SaveSoapIn">
+    <wsdl:part name="parameters" element="tns:ST_SaleOut_Save" />
+  </wsdl:message>
+  <wsdl:message name="ST_SaleOut_SaveSoapOut">
+    <wsdl:part name="parameters" element="tns:ST_SaleOut_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConnectionTestSoapIn">
+    <wsdl:part name="parameters" element="tns:ConnectionTest" />
+  </wsdl:message>
+  <wsdl:message name="ConnectionTestSoapOut">
+    <wsdl:part name="parameters" element="tns:ConnectionTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchInventorySoapIn">
+    <wsdl:part name="parameters" element="tns:SearchInventory" />
+  </wsdl:message>
+  <wsdl:message name="SearchInventorySoapOut">
+    <wsdl:part name="parameters" element="tns:SearchInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchInventoryByPUArrivalSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchInventoryByPUArrival" />
+  </wsdl:message>
+  <wsdl:message name="SearchInventoryByPUArrivalSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchInventoryByPUArrivalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchInventoryBySaleDeliverySoapIn">
+    <wsdl:part name="parameters" element="tns:SearchInventoryBySaleDelivery" />
+  </wsdl:message>
+  <wsdl:message name="SearchInventoryBySaleDeliverySoapOut">
+    <wsdl:part name="parameters" element="tns:SearchInventoryBySaleDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLabelSerialNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLabelSerialNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetLabelSerialNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLabelSerialNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifySerialNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifySerialNumber" />
+  </wsdl:message>
+  <wsdl:message name="ModifySerialNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifySerialNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraceSoapIn">
+    <wsdl:part name="parameters" element="tns:Trace" />
+  </wsdl:message>
+  <wsdl:message name="TraceSoapOut">
+    <wsdl:part name="parameters" element="tns:TraceResponse" />
+  </wsdl:message>
+  <wsdl:message name="VendorQuanlificationSoapIn">
+    <wsdl:part name="parameters" element="tns:VendorQuanlification" />
+  </wsdl:message>
+  <wsdl:message name="VendorQuanlificationSoapOut">
+    <wsdl:part name="parameters" element="tns:VendorQuanlificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectCheckVouchListSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectCheckVouchList" />
+  </wsdl:message>
+  <wsdl:message name="SelectCheckVouchListSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectCheckVouchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectCheckVouchSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectCheckVouch" />
+  </wsdl:message>
+  <wsdl:message name="SelectCheckVouchSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectCheckVouchResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckVouchSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveCheckVouch" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckVouchSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveCheckVouchResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">HelloWorld</wsdl:documentation>
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPCVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取PC端服务版本信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPCVersionSoapIn" />
+      <wsdl:output message="tns:GetPCVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPCNewDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取最新的配置文档</wsdl:documentation>
+      <wsdl:input message="tns:GetPCNewDocumentSoapIn" />
+      <wsdl:output message="tns:GetPCNewDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPCVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取PC端服务版本信息</wsdl:documentation>
+      <wsdl:input message="tns:GetPPCVersionSoapIn" />
+      <wsdl:output message="tns:GetPPCVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPCNewDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取最新的配置文档</wsdl:documentation>
+      <wsdl:input message="tns:GetPPCNewDocumentSoapIn" />
+      <wsdl:output message="tns:GetPPCNewDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdateFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">更新对应文件</wsdl:documentation>
+      <wsdl:input message="tns:GetUpdateFileSoapIn" />
+      <wsdl:output message="tns:GetUpdateFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUAAcountInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">登录前查询账套信息</wsdl:documentation>
+      <wsdl:input message="tns:GetUAAcountInfoSoapIn" />
+      <wsdl:output message="tns:GetUAAcountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户登录</wsdl:documentation>
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWarehouse">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据用户查询仓库信息</wsdl:documentation>
+      <wsdl:input message="tns:GetWarehouseSoapIn" />
+      <wsdl:output message="tns:GetWarehouseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Competence">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据用户ID查询用户操作权限</wsdl:documentation>
+      <wsdl:input message="tns:CompetenceSoapIn" />
+      <wsdl:output message="tns:CompetenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectPurchaseList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询采购到货列表</wsdl:documentation>
+      <wsdl:input message="tns:SelectPurchaseListSoapIn" />
+      <wsdl:output message="tns:SelectPurchaseListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectSaleDeliveryList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询销售发货单列表</wsdl:documentation>
+      <wsdl:input message="tns:SelectSaleDeliveryListSoapIn" />
+      <wsdl:output message="tns:SelectSaleDeliveryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SA_Consignment_Load">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">销售发货单装载</wsdl:documentation>
+      <wsdl:input message="tns:SA_Consignment_LoadSoapIn" />
+      <wsdl:output message="tns:SA_Consignment_LoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ST_SaleOut_Save">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">销售出库单保存</wsdl:documentation>
+      <wsdl:input message="tns:ST_SaleOut_SaveSoapIn" />
+      <wsdl:output message="tns:ST_SaleOut_SaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConnectionTest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">连接测试</wsdl:documentation>
+      <wsdl:input message="tns:ConnectionTestSoapIn" />
+      <wsdl:output message="tns:ConnectionTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchInventory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询存货信息</wsdl:documentation>
+      <wsdl:input message="tns:SearchInventorySoapIn" />
+      <wsdl:output message="tns:SearchInventorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchInventoryByPUArrival">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据到货单打印条码</wsdl:documentation>
+      <wsdl:input message="tns:SearchInventoryByPUArrivalSoapIn" />
+      <wsdl:output message="tns:SearchInventoryByPUArrivalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchInventoryBySaleDelivery">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据发货单打印条码</wsdl:documentation>
+      <wsdl:input message="tns:SearchInventoryBySaleDeliverySoapIn" />
+      <wsdl:output message="tns:SearchInventoryBySaleDeliverySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabelSerialNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询小标签流水号</wsdl:documentation>
+      <wsdl:input message="tns:GetLabelSerialNumberSoapIn" />
+      <wsdl:output message="tns:GetLabelSerialNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifySerialNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改小标签流水号</wsdl:documentation>
+      <wsdl:input message="tns:ModifySerialNumberSoapIn" />
+      <wsdl:output message="tns:ModifySerialNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Trace">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">食品追溯</wsdl:documentation>
+      <wsdl:input message="tns:TraceSoapIn" />
+      <wsdl:output message="tns:TraceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VendorQuanlification">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">供应商资质</wsdl:documentation>
+      <wsdl:input message="tns:VendorQuanlificationSoapIn" />
+      <wsdl:output message="tns:VendorQuanlificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCheckVouchList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询盘点单列表</wsdl:documentation>
+      <wsdl:input message="tns:SelectCheckVouchListSoapIn" />
+      <wsdl:output message="tns:SelectCheckVouchListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCheckVouch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据盘点单、存货编码、批次查询盘点信息</wsdl:documentation>
+      <wsdl:input message="tns:SelectCheckVouchSoapIn" />
+      <wsdl:output message="tns:SelectCheckVouchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCheckVouch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">保存盘点列表</wsdl:documentation>
+      <wsdl:input message="tns:SaveCheckVouchSoapIn" />
+      <wsdl:output message="tns:SaveCheckVouchSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPCVersion">
+      <soap:operation soapAction="http://tempuri.org/GetPCVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPCNewDocument">
+      <soap:operation soapAction="http://tempuri.org/GetPCNewDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPCVersion">
+      <soap:operation soapAction="http://tempuri.org/GetPPCVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPCNewDocument">
+      <soap:operation soapAction="http://tempuri.org/GetPPCNewDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdateFile">
+      <soap:operation soapAction="http://tempuri.org/GetUpdateFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUAAcountInfo">
+      <soap:operation soapAction="http://tempuri.org/GetUAAcountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWarehouse">
+      <soap:operation soapAction="http://tempuri.org/GetWarehouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Competence">
+      <soap:operation soapAction="http://tempuri.org/Competence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectPurchaseList">
+      <soap:operation soapAction="http://tempuri.org/SelectPurchaseList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSaleDeliveryList">
+      <soap:operation soapAction="http://tempuri.org/SelectSaleDeliveryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SA_Consignment_Load">
+      <soap:operation soapAction="http://tempuri.org/SA_Consignment_Load" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ST_SaleOut_Save">
+      <soap:operation soapAction="http://tempuri.org/ST_SaleOut_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConnectionTest">
+      <soap:operation soapAction="http://tempuri.org/ConnectionTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchInventory">
+      <soap:operation soapAction="http://tempuri.org/SearchInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchInventoryByPUArrival">
+      <soap:operation soapAction="http://tempuri.org/SearchInventoryByPUArrival" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchInventoryBySaleDelivery">
+      <soap:operation soapAction="http://tempuri.org/SearchInventoryBySaleDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabelSerialNumber">
+      <soap:operation soapAction="http://tempuri.org/GetLabelSerialNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifySerialNumber">
+      <soap:operation soapAction="http://tempuri.org/ModifySerialNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Trace">
+      <soap:operation soapAction="http://tempuri.org/Trace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorQuanlification">
+      <soap:operation soapAction="http://tempuri.org/VendorQuanlification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCheckVouchList">
+      <soap:operation soapAction="http://tempuri.org/SelectCheckVouchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCheckVouch">
+      <soap:operation soapAction="http://tempuri.org/SelectCheckVouch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCheckVouch">
+      <soap:operation soapAction="http://tempuri.org/SaveCheckVouch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPCVersion">
+      <soap12:operation soapAction="http://tempuri.org/GetPCVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPCNewDocument">
+      <soap12:operation soapAction="http://tempuri.org/GetPCNewDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPCVersion">
+      <soap12:operation soapAction="http://tempuri.org/GetPPCVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPCNewDocument">
+      <soap12:operation soapAction="http://tempuri.org/GetPPCNewDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdateFile">
+      <soap12:operation soapAction="http://tempuri.org/GetUpdateFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUAAcountInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetUAAcountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWarehouse">
+      <soap12:operation soapAction="http://tempuri.org/GetWarehouse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Competence">
+      <soap12:operation soapAction="http://tempuri.org/Competence" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectPurchaseList">
+      <soap12:operation soapAction="http://tempuri.org/SelectPurchaseList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSaleDeliveryList">
+      <soap12:operation soapAction="http://tempuri.org/SelectSaleDeliveryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SA_Consignment_Load">
+      <soap12:operation soapAction="http://tempuri.org/SA_Consignment_Load" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ST_SaleOut_Save">
+      <soap12:operation soapAction="http://tempuri.org/ST_SaleOut_Save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConnectionTest">
+      <soap12:operation soapAction="http://tempuri.org/ConnectionTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchInventory">
+      <soap12:operation soapAction="http://tempuri.org/SearchInventory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchInventoryByPUArrival">
+      <soap12:operation soapAction="http://tempuri.org/SearchInventoryByPUArrival" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchInventoryBySaleDelivery">
+      <soap12:operation soapAction="http://tempuri.org/SearchInventoryBySaleDelivery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabelSerialNumber">
+      <soap12:operation soapAction="http://tempuri.org/GetLabelSerialNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifySerialNumber">
+      <soap12:operation soapAction="http://tempuri.org/ModifySerialNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Trace">
+      <soap12:operation soapAction="http://tempuri.org/Trace" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VendorQuanlification">
+      <soap12:operation soapAction="http://tempuri.org/VendorQuanlification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCheckVouchList">
+      <soap12:operation soapAction="http://tempuri.org/SelectCheckVouchList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCheckVouch">
+      <soap12:operation soapAction="http://tempuri.org/SelectCheckVouch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCheckVouch">
+      <soap12:operation soapAction="http://tempuri.org/SaveCheckVouch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:13259/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:13259/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
